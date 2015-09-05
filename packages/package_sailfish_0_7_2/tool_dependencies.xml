@@ -4,11 +4,11 @@
         <repository name="package_boost_1_57" owner="iuc" prior_installation_required="True" />
     </package>
 
-    <package name="sailfish" version="0.7.2">
+    <package name="sailfish" version="0.7.3">
         <install version="1.0">
             <actions_group>
                 <actions architecture="x86_64" os="linux">
-                    <action type="download_by_url">https://github.com/kingsfordgroup/sailfish/releases/download/v0.7.2/SailfishBeta-0.7.2_Linux-x86-64.tar.gz</action>
+                    <action type="download_by_url">https://github.com/kingsfordgroup/sailfish/releases/download/v0.7.3/SailfishBeta-0.7.3_Linux-x86-64.tar.gz</action>
                     <action type="move_directory_files">
                         <source_directory>.</source_directory>
                         <destination_directory>$INSTALL_DIR</destination_directory>
@@ -19,7 +19,7 @@
                     </action>
                 </actions>
                 <actions architecture="x86_64" os="darwin">
-                    <action type="download_by_url">https://github.com/kingsfordgroup/sailfish/releases/download/v0.7.2/SailfishBeta-0.7.2_OSX_10.10.tar.gz</action>
+                    <action type="download_by_url">https://github.com/kingsfordgroup/sailfish/releases/download/v0.7.3/SailfishBeta-0.7.3_OSX_10.10.tar.gz</action>
                     <action type="move_directory_files">
                         <source_directory>.</source_directory>
                         <destination_directory>$INSTALL_DIR</destination_directory>
@@ -31,7 +31,7 @@
                 </actions>
                 <actions>
                     <!-- first action is always downloading -->
-                    <action type="download_by_url">https://github.com/kingsfordgroup/sailfish/archive/v0.7.2.tar.gz</action>
+                    <action type="download_by_url">https://github.com/kingsfordgroup/sailfish/archive/v0.7.3.tar.gz</action>
 
                     <!-- populate the environment variables from the dependend repos -->
                     <action type="set_environment_for_install">
