@@ -6,45 +6,47 @@ and identify regulatory transcription factors</description>
     </macros>
     <expand macro="requirements" />
     <command detect_errors="exit_code"><![CDATA[
-        Rscript "${tcga_pipe}"
-        && 
-        mkdir "./res"
-        &&
-        mv "./Results/${disease}/*" "./res/."
+        Rscript ${__tool_directory__}/elmer_pipeline.R
+        --meth_file="${methfile}"
+        --rna_file="${rnafile}"
+        --sample_info="${sampleinfo}" 
         ]]></command>
-    <configfiles>
-        <configfile name="tcga_pipe"><![CDATA[
-## IF disease type NOT available, stop.
-if(is.null("${disease}")){
-   stop("The disease name should be from TCGA")
-}
-
-## Download all TCGA data
-
-ELMER::TCGA.pipe("${disease}",cores=detectCores()/2,permu.size=300,Pe=0.01)
-
-    ]]></configfile>
-    </configfiles>
+    <expand macro="minfi_config" />
     <inputs>
-        <param name="disease" type="text" value="LUAD" label="Cancer type from TCGA"/>
-        <!--<param name="diffdir" type="boolean" checked="true" truevalue="hypo" falsevalue="hyper"-->
-            <!--label="Select direction of methylation, Yes: Hypo, No: Hyper" />-->
+        
+        <!-- Methylation data input -->
+        <conditional name="methylation">
+            <param name="inputtype" type="select" label="Select Methylation Data input type">
+                <option value="manual">Upload manually generated methylation Beta values as a matrix</option>
+                <option value="auto">Auto generate methyaltion matrix from IDAT files</option>
+            </param>
+            <when value="manual">
+                <param format="csv" name="methdata" type="data" label="Beta values from data" help="see help section below for format description"/>
+            </when>
+            <when value="auto">
+                <expand macro="minfi_input" />
+            </when>
+        </conditional>
+        
+        <!-- RNA seq data input -->
+        <param format="csv" name="rnadata" type="data" label="Normalized expression data"/>
+
+        <!-- Sample information input -->
+        <param format="csv" name="sampleinformation" type="data" label="Sample information" />
     </inputs>
     <outputs>
-        <!--<data name="getMethdiff.${diffdir}.probes.csv" format="csv" label="${disease}_getMethdiff.${diffdir}.probes.csv" />-->
-        <!--<data name="getMethdiff.${diffdir}.probes.significant.csv" format="csv" label="${disease}_getMethdiff.${diffdir}.probes.significant.csv" />-->
-
-        <!--<data name="geneInfo.rda" format="rdata" label="${disease}_geneInfo.rda" />-->
-        <!--<data name="hypo.probes_nearGenes.rda" format="rdata" label="${disease}_hypo.probes_nearGenes.rda" />-->
-        <!--<data name="probeInfo_feature_distal.rda" format="rdata" label="${disease}_probeInfo_feature_distal.rda" />-->
-        <!--<data name="${disease}_meth_refined.rda" format="rdata" label="${disease}_meth_refined.rda" />-->
-        <!--<data name="${disease}_RNA_refined.rda" format="rdata" label="${disease}_RNA_refined.rda" />-->
-        <!--[> Insert more outputs <]-->
         <data format="txt" name="report">
             <discover_datasets pattern="__designation_and_ext__" directory="./Result/${disease}/" visible="true" />
         </data>
-
     </outputs>
+    <!--<tests>-->
+        <!--<test>-->
+            <!--<param name="methdata" value="methdata.csv"/>-->
+            <!--<param name="rnadata" value="rnadata.csv" />-->
+            <!--<param name="sampleinfo" value="sampleinfo.csv" />-->
+            <!--<output name="output" file="complementBed_result1.bed" ftype="bed" />-->
+        <!--</test>-->
+    <!--</tests>-->
     <help>
 **What it does:**
 
@@ -53,12 +55,24 @@ ELMER, uses only methylation and expression data, and does not require any chrom
 
 **Input:**
 
-disease A character specifies the disease to download in TCGA such as BLCA,LUAD,LUSC,BRCA etc
+450k data
 
+RNA data
+
+Sample information 
 
 **Output:**
 
-Complete ELMER results for TCGA data
+Complete ELMER results 
+
+**How to use**
+
+There are 3 main inputs needed to run ELMER via Galaxy, methylation matrix, gene expression matrix, sample information of the files. 
+
+
+
+TODO: Example sample information file
+
 
     </help>
     <expand macro="citations" />

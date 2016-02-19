@@ -4,21 +4,26 @@
         <import>elmer_macros.xml</import>
     </macros>
     <expand macro="requirements" />
-    <command detect_errors="exit_code">
-       Rscript "${TCGA_pipe}"
-    </command>
+    <command detect_errors="exit_code"><![CDATA[
+        cat "${TCGA_pipe}"
+        && Rscript "${TCGA_pipe}"
+        ]]></command>
     <configfiles>
         <configfile name="TCGA_pipe"><![CDATA[
 library(ELMER, quietly=TRUE, warn.conflicts=FALSE,verbose = FALSE)
 
 ## IF disease type NOT available, stop.
-if(is.null("${disease}")){
-   stop("The disease name should be from TCGA")
+
+tcga_valid = c("HNSC","BLCA","BRCA" ,"CESC" ,"COAD" ,"GBM" ,"LUSC" ,"KICH" ,"KIRC" ,"KIRP" ,"LAML" ,"SKCM" ,"LGG" ,"LIHC","LUAD","SARC","OV" ,"THCA" ,"PRAD" ,"READ" ,"UCEC" ,"STAD","PAAD")
+
+if( !("${disease}" %in% tcga_valid )){
+    cat("Valid TCGA cancer types which work with ELMER",tcga_valid)
+    stop("The disease name should be from TCGA list of valid cancer types")
 }
 
-cores = "${GALAXY_SLOTS:-4}"
+cores = "${GALAXY_SLOTS:-4}" # TODO 
 
-TCGA.pipe("${disease}",wd="./Data",cores=cores/2,permu.size=300,Pe=0.01,analysis="${analysis_select.analysis}",diff.dir="${diffdir_select.diffdir}",rm.chr=paste0("chr",c("X","Y")))
+ELMER::TCGA.pipe("${disease}",rm.chr=paste0("chr",c("X","Y")),wd=".", analysis = c("download", "distal.probes", "diffMeth", "pair", "motif", "TF.search"),diff.dir="${diffdir_select.diffdir}")
 
         ]]></configfile>
     </configfiles>
