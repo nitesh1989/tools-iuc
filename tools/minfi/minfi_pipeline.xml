@@ -91,23 +91,62 @@
         <data name="dmrs.csv" from_work_dir="dmrs.csv" format="csv" label="Differentially Methylated Regions using Bumphunter" />
         <!--<data name="blocks.csv" format="csv" label="Blocks:large scale regions of methylation differences" />-->
     </outputs>
-    <tests>
-		<test>
-        	<param name="single_or_paired" value="pe_collection" />
-            <param name="input_paired">
-                <collection type="paired">
-                    <element name="forward" ftype="fastqsanger" value="test.f.fastq" />
-                    <element name="reverse" ftype="fastqsanger" value="test.r.fastq" />
-                </collection>
-            </param>
-            <param name="qual_threshold" value="34" />
-            <output_collection name="output_paired_coll" type="paired">
-                <element name="forward" ftype="fastqsanger" file="output.f.fastq" />
-                <element name="reverse" ftype="fastqsanger" file="output.r.fastq" />
-            </output_collection>
-            <output name="output_paired_coll_single" ftype="fastqsanger" file="output.s.fastq" />
-        </test>
-    </tests>
+    <!--<tests>-->
+        <!--<test>-->
+              <!--<param name="input1">-->
+                <!--<collection type="list:paired">-->
+					  <!--<element name="Case">-->
+                        <!--<collection type="paired">-->
+                              <!--<element name="forward" value="5723646052_R02C02_Grn.idat" />-->
+                              <!--<element name="reverse" value="5723646052_R02C02_Red.idat" />-->
+                           <!--</collection>-->
+						<!--<collection type="paired">-->
+                              <!--<element name="forward" value="5723646052_R04C01_Grn.idat" />-->
+                              <!--<element name="reverse" value="5723646052_R04C01_Red.idat" />-->
+                           <!--</collection>-->
+						<!--<collection type="paired">-->
+                              <!--<element name="forward" value="5723646052_R05C02_Grn.idat" />-->
+                              <!--<element name="reverse" value="5723646052_R05C02_Red.idat" />-->
+                           <!--</collection>-->
+                      <!--</element>-->
+                <!--</collection>-->
+              <!--</param>-->
+			<!--<param name="input2">-->
+                <!--<collection type="list:paired">-->
+					  <!--<element name="Control">-->
+                        <!--<collection type="paired">-->
+                              <!--<element name="forward" value="5723646053_R04C02_Grn.idat" />-->
+                              <!--<element name="reverse" value="5723646053_R04C02_Red.idat" />-->
+                           <!--</collection>-->
+						<!--<collection type="paired">-->
+                              <!--<element name="forward" value="5723646053_R05C02_Grn.idat" />-->
+                              <!--<element name="reverse" value="5723646053_R05C02_Red.idat" />-->
+                           <!--</collection>-->
+						<!--<collection type="paired">-->
+                              <!--<element name="forward" value="5723646053_R06C02_Grn.idat" />-->
+                              <!--<element name="reverse" value="5723646053_R06C02_Red.idat" />-->
+                           <!--</collection>-->
+                      <!--</element>-->
+                <!--</collection>-->
+              <!--</param>-->
+             <!--<param name="preprocess_name" value="quantile">-->
+			<!--<param name="minfi_param_type_selector" value="basic"/>-->
+              <!--<output_collection name="list_output" type="list:paired">-->
+                <!--<element name="i1">-->
+                  <!--<element name="forward">-->
+                    <!--<assert_contents>-->
+                          <!--<has_text_matching expression="^identifier is i1:forward\n$" />-->
+                    <!--</assert_contents>-->
+                  <!--</element>-->
+                  <!--<element name="reverse">-->
+                    <!--<assert_contents>-->
+                          <!--<has_text_matching expression="^identifier is i1:reverse\n$" />-->
+                    <!--</assert_contents>-->
+                  <!--</element>		-->
+                <!--</element>-->
+              <!--</output_collection>-->
+        <!--</test> -->
+    <!--</tests>-->
     <help>
 <![CDATA[
 .. class:: infomark
