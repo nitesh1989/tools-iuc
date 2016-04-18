@@ -73,6 +73,7 @@
                 <package>https://bioarchive.galaxyproject.org/quadprog_1.5-5.tar.gz</package>
                 <package>https://bioarchive.galaxyproject.org/GEOquery_2.35.7.tar.gz</package>
                 <package>https://bioarchive.galaxyproject.org/minfi_1.16.0.tar.gz</package>
+                <package>https://cran.r-project.org/src/contrib/getopt_1.20.0.tar.gz</package>
             </action>
         </actions>
         </install>
