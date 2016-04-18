@@ -94,46 +94,54 @@
         <test>
           <param name="case">
             <collection type="list:paired">
-					     <element name="Case">
-                          <collection type="paired">
-                              <element name="forward" value="5723646052/5723646052_R02C02_Grn.idat" />
-                              <element name="reverse" value="5723646052/5723646052_R02C02_Red.idat" />
-                          </collection>
-						              <collection type="paired">
-                              <element name="forward" value="5723646052/5723646052_R04C01_Grn.idat" />
-                              <element name="reverse" value="5723646052/5723646052_R04C01_Red.idat" />
-                          </collection>
-						              <collection type="paired">
-                              <element name="forward" value="5723646052/5723646052_R05C02_Grn.idat" />
-                              <element name="reverse" value="5723646052/5723646052_R05C02_Red.idat" />
-                           </collection>
-                      </element>
-                </collection>
-              </param>
-            <param name="control">
-                <collection type="list:paired">
-                      <element name="Control">
-                        <collection type="paired">
-                              <element name="forward" value="5723646053/5723646053_R04C02_Grn.idat" />
-                              <element name="reverse" value="5723646053/5723646053_R04C02_Red.idat" />
-                           </collection>
-                        <collection type="paired">
-                              <element name="forward" value="5723646053/5723646053_R05C02_Grn.idat" />
-                              <element name="reverse" value="5723646053/5723646053_R05C02_Red.idat" />
-                           </collection>
-                        <collection type="paired">
-                              <element name="forward" value="5723646053/5723646053_R06C02_Grn.idat" />
-                              <element name="reverse" value="5723646053/5723646053_R06C02_Red.idat" />
-                           </collection>
-                      </element>
-                </collection>
-              </param>
-             <param name="preprocess.preprocess_method" value="quantile" />
-			       <param name="minfi_param_type.minfi_param_type_selector" value="basic"/>
-             <output name="qc_report.pdf" file="qc_report.pdf" ftype="pdf" />
-             <output name="mds_plot.pdf" file="mds_plot.pdf" ftype="pdf" />
-             <output name="dmps.csv" file="dmps.csv" ftype="csv" />
-             <output name="dmrs.csv" file="dmrs.csv" ftype="csv" />
+             <element name="5723646052_R02C02">
+              <collection type="paired">
+                <element name="forward" value="5723646052/5723646052_R02C02_Grn.idat" />
+                <element name="reverse" value="5723646052/5723646052_R02C02_Red.idat" />
+              </collection>
+            </element>
+            <element name="5723646052_R04C01">
+              <collection type="paired">
+                <element name="forward" value="5723646052/5723646052_R04C01_Grn.idat" />
+                <element name="reverse" value="5723646052/5723646052_R04C01_Red.idat" />
+              </collection>
+            </element>
+            <element name="5723646052_R05C02">
+              <collection type="paired">
+                <element name="forward" value="5723646052/5723646052_R05C02_Grn.idat" />
+                <element name="reverse" value="5723646052/5723646052_R05C02_Red.idat" />
+              </collection>
+            </element>
+          </collection>
+        </param>
+        <param name="control">
+          <collection type="list:paired">
+            <element name="5723646053_R04C02">
+              <collection type="paired">
+                <element name="forward" value="5723646053/5723646053_R04C02_Grn.idat" />
+                <element name="reverse" value="5723646053/5723646053_R04C02_Red.idat" />
+              </collection>
+            </element>
+            <element name="5723646053_R05C02">
+              <collection type="paired">
+                <element name="forward" value="5723646053/5723646053_R05C02_Grn.idat" />
+                <element name="reverse" value="5723646053/5723646053_R05C02_Red.idat" />
+              </collection>
+            </element>
+            <element name="5723646053_R06C02">
+              <collection type="paired">
+                <element name="forward" value="5723646053/5723646053_R06C02_Grn.idat" />
+                <element name="reverse" value="5723646053/5723646053_R06C02_Red.idat" />
+              </collection>
+            </element>
+          </collection>
+        </param>
+        <param name="preprocess.preprocess_method" value="quantile" />
+        <param name="minfi_param_type.minfi_param_type_selector" value="basic"/>
+        <output name="qc_report.pdf" file="qc_report.pdf" ftype="pdf" />
+        <output name="mds_plot.pdf" file="mds_plot.pdf" ftype="pdf" />
+        <output name="dmps.csv" file="dmps.csv" ftype="csv" />
+        <output name="dmrs.csv" file="dmrs.csv" ftype="csv" />
         </test>
     </tests>
   <help>
