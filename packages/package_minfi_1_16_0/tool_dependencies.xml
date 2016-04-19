@@ -6,16 +6,19 @@
     <package name="R" version="3.2.1">
         <repository name="package_r_3_2_1" owner="iuc" prior_installation_required="True" />
     </package>
+    <package name="r-getopt" version="1.20.0">
+        <repository name="package_r_3_2_1_getopt_1_20_0" owner="bebatut" prior_installation_required="True" />
+    </package>
     <package name="minfi" version="1.16.0">
         <install version="1.0">
         <actions>
             <action type="setup_r_environment">
-                <package name="libcurl" version="7.35">
-                    <repository name="package_libcurl_7_35" owner="iuc" prior_installation_required="True" />
-                </package>
-                <package name="R" version="3.2.1">
-                    <repository name="package_r_3_2_1" owner="iuc" />
-                </package>
+                <repository name="package_libcurl_7_35" owner="iuc" prior_installation_required="True">
+                    <package name="libcurl" version="7.35" />
+                </repository>
+                <repository name="package_r_3_2_1" owner="iuc" >
+                    <package name="R" version="3.2.1" />
+                </repository>
                 <package>https://bioarchive.galaxyproject.org/BiocGenerics_0.16.0.tar.gz</package>
                 <package>https://bioarchive.galaxyproject.org/Biobase_2.30.0.tar.gz</package>
                 <package>https://bioarchive.galaxyproject.org/S4Vectors_0.8.0.tar.gz</package>
@@ -73,7 +76,6 @@
                 <package>https://bioarchive.galaxyproject.org/quadprog_1.5-5.tar.gz</package>
                 <package>https://bioarchive.galaxyproject.org/GEOquery_2.35.7.tar.gz</package>
                 <package>https://bioarchive.galaxyproject.org/minfi_1.16.0.tar.gz</package>
-                <package>https://cran.r-project.org/src/contrib/getopt_1.20.0.tar.gz</package>
             </action>
         </actions>
         </install>
