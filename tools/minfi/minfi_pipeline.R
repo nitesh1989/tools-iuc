@@ -43,6 +43,7 @@ if (is.null(opt$preprocess)) {
     cat("'--preprocess' is required\n")
     q(status=1)
 }
+cat("verbose = ", opt$quiet,"\n")
 cat("preprocess = ",opt$preprocess,"\n")
 cat("cores = ", opt$cores, "\n")
 cat("b_permutations = ",opt$b_permutations,"\n")
@@ -151,7 +152,7 @@ if(opt$preprocess == "quantile"){
 } else if (opt$preprocess == "illumina"){
     normalized_RGset = preprocessIllumina(RGset,bg.correct = TRUE, normalize = c("controls", "no"),reference = 1)
     if(verbose){print("Preprocessed using Illumina normalization")}
-} else if (opt$preprocess == "swan"){ 
+} else if (opt$preprocess == "swan"){
     normalized_RGset = preprocessSWAN(RGset)
     if(verbose){print("Preprocessed using SWAN normalization")}
 }else {
@@ -208,7 +209,7 @@ if (is(normalized_RGset,"GenomicRatioSet")) {
 } else {
     # This else case is never supposed to run,
     # it will run only if the normalized_RGset object
-    # did not have the expected class type   
+    # did not have the expected class type
     cat("Bumphunter did not run properly","\n")
     stopifnot(!is.null(bumps))
 }

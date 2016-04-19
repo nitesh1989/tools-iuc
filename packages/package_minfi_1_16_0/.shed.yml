@@ -4,7 +4,7 @@ description: Contains a tool dependency definition that downloads and compiles v
   1.16.0 of Minfi.
 long_description: |
   Minfi: A flexible and comprehensive Bioconductor package for the analysis of Infinium DNA Methylation microarrays
-  
+
   http://bioconductor.org/packages/release/bioc/html/minfi.html
 name: package_minfi_1_16_0
 owner: iuc

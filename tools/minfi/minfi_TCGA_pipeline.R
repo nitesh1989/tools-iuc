@@ -54,7 +54,7 @@ cmd = paste("ln -s",dataset_path,tarfile_name,sep=" ")
 cat("Command : ", cmd,"\n")
 system(cmd)
 
-tarfile = tarfile_name 
+tarfile = tarfile_name
 cat ("tarfile name: ",tarfile," file ext: ",file_ext(tarfile))
 ## UNtar files in R first
 if (file_ext(tarfile) == "tar"){
@@ -71,13 +71,13 @@ if (file_ext(tarfile) == "tar"){
 ## Move file from sub directory to main directory
 from = list.files(pattern=".data.txt",recursive=TRUE)
 to = gsub(".+/","",from)
-rename_success = file.rename(from=from, to=to)    
+rename_success = file.rename(from=from, to=to)
 
 
-# This should pass only if steps have been successful 
+# This should pass only if steps have been successful
 stopifnot(rename_success)
 if (rename_success){
-    input_file = to 
+    input_file = to
 }
 
 ### Read the TCGA data
@@ -94,7 +94,7 @@ chr = as.character(chr)
 
 # Assign phenotype information
 ## Based on TCGA sample naming, TCGA-2E-A9G8-01A-11D-A409-05, char 14,15 represent
-## phenotypic status of sample, 01 = cancer, 11=normal 
+## phenotypic status of sample, 01 = cancer, 11=normal
 pd$status = ifelse(test= (substr(rownames(pd),14,15) == "01"),yes="cancer",no="normal")
 
 ### DMP finder
@@ -104,8 +104,8 @@ if(verbose){
     cat("DMP Finder successful \n")
 }
 
- 
-## Make design matrix for bumphunting 
+
+## Make design matrix for bumphunting
 #Model Matrix
 T1="normal";T2="cancer"
 ## Introduce error if levels are different
@@ -114,7 +114,7 @@ keep=pd$status%in%c(T1,T2)
 tt=factor(pd$status[keep],c(T1,T2))
 design=model.matrix(~tt)
 
- 
+
 ## Start bumphunter in a parallel environment
 ## Parallelize over cores on machine
 library(doParallel)
