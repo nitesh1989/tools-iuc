@@ -2,7 +2,7 @@
     <xml name="requirements">
         <requirements>
 	  	    <requirement type="package" version="3.2.1">R</requirement>
-	        <requirement type="package" version="1.15.11">minfi</requirement>
+	        <requirement type="package" version="1.16.0">minfi</requirement>
         </requirements>
     </xml>
 	<xml name="citations">
