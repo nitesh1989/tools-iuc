@@ -96,6 +96,7 @@
                     <package>https://cran.r-project.org/src/contrib/mixOmics_5.2.0.tar.gz</package>
                     <package>https://bioarchive.galaxyproject.org/minfi_1.16.0.tar.gz</package>
                     <package>https://cran.r-project.org/src/contrib/getopt_1.20.0.tar.gz</package>
+                    <package>https://bioconductor.org/packages/release/data/experiment/src/contrib/FlowSorted.Blood.450k_1.8.0.tar.gz</package>
                 </action>
          </actions>
       </install>
