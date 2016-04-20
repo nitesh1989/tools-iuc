@@ -1,19 +1,19 @@
 <?xml version="1.0"?>
 <tool_dependency>
     <package name="libcurl" version="7.35">
-        <repository changeset_revision="f8230c44d76c" name="package_libcurl_7_35" owner="iuc" prior_installation_required="True" toolshed="http://gaius.bx.psu.edu:8008" />
+        <repository name="package_libcurl_7_35" owner="iuc" prior_installation_required="True" />
     </package>
     <package name="R" version="3.2.1">
-        <repository changeset_revision="7289a736da57" name="package_r_3_2_1" owner="iuc" prior_installation_required="True" toolshed="http://gaius.bx.psu.edu:8008" />
+        <repository name="package_r_3_2_1" owner="iuc" prior_installation_required="True" />
     </package>
     <package name="minfi" version="1.16.0">
         <install version="1.0">
             <actions>
                 <action type="setup_r_environment">
-                    <repository changeset_revision="f8230c44d76c" name="package_libcurl_7_35" owner="iuc" prior_installation_required="True" toolshed="http://gaius.bx.psu.edu:8008">
+                    <repository name="package_libcurl_7_35" owner="iuc" prior_installation_required="True">
                         <package name="libcurl" version="7.35" />
                     </repository>
-                    <repository changeset_revision="7289a736da57" name="package_r_3_2_1" owner="iuc" toolshed="http://gaius.bx.psu.edu:8008">
+                    <repository name="package_r_3_2_1" owner="iuc">
                         <package name="R" version="3.2.1" />
                     </repository>
                     <package>https://bioconductor.org/packages/release/bioc/src/contrib/BiocGenerics_0.16.1.tar.gz</package>
