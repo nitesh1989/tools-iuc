@@ -1,0 +1,11 @@
+categories:
+    - Tool Dependency Packages
+description: Contains a tool dependency definition that downloads and compiles version
+      1.0.8 of motifbreakR.
+long_description: |
+      motifbreakR: A Package For Predicting The Disruptiveness Of Single Nucleotide Polymorphisms On Transcription Factor Binding Sites
+          https://www.bioconductor.org/packages/release/bioc/vignettes/motifbreakR/inst/doc/motifbreakR-vignette.html
+      name: package_motifbreakr_1_0_8
+      owner: nturaga # Change this before pushing to IUC repo TODO
+      remote_repository_url: https://github.com/Bioconductor-mirror/motifbreakR/tree/release-3.2
+      type: tool_dependency_definition

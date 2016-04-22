@@ -1,0 +1,14 @@
+categories:
+- Chip-seq
+description: motifbreakR Bioconductor package
+homepage_url: https://www.bioconductor.org/packages/release/bioc/html/motifbreakR.html
+long_description: motifbreakR package version 1.0.8, A Package For Predicting The Disruptiveness Of Single Nucleotide Polymorphisms On Transcription Factor Binding Sites
+name: motifbreakR
+owner: nturaga #Change owner tag here for IUC
+auto_tool_repositories:
+  name_template: "{{ tool_id }}"
+  description_template: "Wrapper for motifbreakR: {{ tool_name }}"
+suite:
+  name: "motifbreakR"
+  description: "predicting variant effects at transcription factor binding sites"
+  long_description: motifbreakR package version 1.0.8, predicting variant effects at transcription factor binding sites

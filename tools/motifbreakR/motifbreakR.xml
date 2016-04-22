@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool id="motifbreakr" name="motifbreakR" version="0.1.0">
+    <description>Predicting variant effects at transcription factor binding sites</description>
+    <macros>
+        <import>motifbreakR_macros.xml</import>
+    </macros>
+    <expand macro="requirements" />
+    <command detect_errors="exit_code"><![CDATA[
+        Rscript motifbreakr.R $input > $output
+    ]]></command>
+    <inputs>
+        <param type="data" name="input1" format="input_datatype" />
+    </inputs>
+    <outputs>
+        <data name="output1" format="output_datatype" />
+    </outputs>
+    <tests>
+        <test>
+            <param name="input1" value="name_of_input_file.extension"/>
+            <output name="output1" file="name_of_output_file.extension"/>
+        </test>
+    </tests>
+    <expand macro="help" />
+    <expand macro="citations" />
+</tool>

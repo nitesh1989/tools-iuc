@@ -1,0 +1,43 @@
+<macros>
+    <xml name="requirements">
+        <requirements>
+	  	    <requirement type="package" version="3.2.1">R</requirement>
+	        <requirement type="package" version="1.0.8">motifbreakR</requirement>
+        </requirements>
+    </xml>
+	<xml name="citations">
+	    <citations>
+		    <citation type="doi">10.1093/bioinformatics/btv470</citation>
+        </citations>
+    </xml>
+    <xml name="help">
+        <help><![CDATA[
+
+**What it does**
+
+motifBreakR, allows the biologist to judge whether the sequence surrounding a polymorphism or mutation is a good match to known transcription factor binding sites, and how much information is gained or lost in one allele of the polymorphism relative to another or mutation vs. wildtype. motifBreakR is flexible, giving a choice of algorithms for interrogation of genomes with motifs from public sources that users can choose from; these are 1) a weighted-sum, 2) log-probabilities, and 3) relative entropy. motifBreakR can predict effects for novel or previously described variants in public databases, making it suitable for tasks beyond the scope of its original design. Lastly, it can be used to interrogate any genome curated within Bioconductor.
+
+The well put together introduction_: https://www.bioconductor.org/packages/release/bioc/vignettes/motifbreakR/inst/doc/motifbreakR-vignette.html .The figure 2.1 (outline of the process) gives a very clear description of the tool, and how it works.
+
+**How it works**
+
+Practically motifBreakR has involves three phases.
+
+- Read in Single Nucleotide Variants: The first step is to read in the list of variants. Variants can be a list of rsIDs if your SNPs are represented in one of the SNPlocs packages, may be included as a .bed file with a specifically formatted name field, or may be provided as a .vcf file. We then transform these input such that it may be read my motifBreakR.
+
+- Find Broken Motifs: Next we present motifBreakR with the input generated in the previous step, along with a set of motifs formatted as class MotifList, and your preferred scoring method.
+
+- Visualize SNPs and motifs: Finally we can visualize which motifs are broken by any individual SNP using our plotting function.
+
+**How to use**
+
+
+
+**References**
+Reference manual_ https://www.bioconductor.org/packages/release/bioc/manuals/motifbreakR/man/motifbreakR.pdf
+
+.. _introduction: https://www.bioconductor.org/packages/release/bioc/vignettes/motifbreakR/inst/doc/motifbreakR-vignette.html
+.. _manual: https://www.bioconductor.org/packages/release/bioc/manuals/motifbreakR/man/motifbreakR.pdf
+    ]]></help>
+    </xml>
+</macros>

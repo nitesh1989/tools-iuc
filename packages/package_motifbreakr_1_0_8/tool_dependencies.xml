@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<tool_dependency>
+	<package name="libcurl" version="7.35">
+		<repository name="package_libcurl_7_35" owner="iuc" prior_installation_required="True" />
+	</package>
+	<package name="R" version="3.2.1">
+		<repository name="package_r_3_2_1" owner="iuc" prior_installation_required="True" />
+	</package>
+	<package name="motifbreakR" version="1.0.8">
+		<install version="1.0">
+			<actions>
+				<action type="setup_r_environment">
+					<repository name="package_libcurl_7_35" owner="iuc" prior_installation_required="True">
+						<package name="libcurl" version="7.35" />
+					</repository>
+					<repository name="package_r_3_2_1" owner="iuc">
+						<package name="R" version="3.2.1" />
+					</repository>
+					<package>https://bioconductor.org/packages/3.2/bioc/src/contrib/BiocGenerics_0.16.1.tar.gz</package>
+					<package>https://bioconductor.org/packages/3.2/bioc/src/contrib/S4Vectors_0.8.11.tar.gz</package>
+					<package>https://bioconductor.org/packages/3.2/bioc/src/contrib/IRanges_2.4.8.tar.gz</package>
+					<package>https://bioconductor.org/packages/3.2/bioc/src/contrib/zlibbioc_1.16.0.tar.gz</package>
+					<package>https://bioconductor.org/packages/3.2/bioc/src/contrib/XVector_0.10.0.tar.gz</package>
+					<package>https://bioconductor.org/packages/3.2/bioc/src/contrib/Biostrings_2.38.4.tar.gz</package>
+					<package>https://bioconductor.org/packages/3.2/bioc/src/contrib/GenomeInfoDb_1.6.3.tar.gz</package>
+					<package>https://bioconductor.org/packages/3.2/bioc/src/contrib/GenomicRanges_1.22.4.tar.gz</package>
+					<package>https://cran.rstudio.com/src/contrib/XML_3.98-1.4.tar.gz</package>
+					<package>https://cran.rstudio.com/src/contrib/bitops_1.0-6.tar.gz</package>
+					<package>https://cran.rstudio.com/src/contrib/RCurl_1.95-4.8.tar.gz</package>
+					<package>https://cran.rstudio.com/src/contrib/lambda.r_1.1.7.tar.gz</package>
+					<package>https://cran.rstudio.com/src/contrib/futile.options_1.0.0.tar.gz</package>
+					<package>https://cran.rstudio.com/src/contrib/futile.logger_1.4.1.tar.gz</package>
+					<package>https://cran.rstudio.com/src/contrib/snow_0.4-1.tar.gz</package>
+					<package>https://bioconductor.org/packages/3.2/bioc/src/contrib/BiocParallel_1.4.3.tar.gz</package>
+					<package>https://bioconductor.org/packages/3.2/bioc/src/contrib/Rsamtools_1.22.0.tar.gz</package>
+					<package>https://bioconductor.org/packages/3.2/bioc/src/contrib/Biobase_2.30.0.tar.gz</package>
+					<package>https://bioconductor.org/packages/3.2/bioc/src/contrib/SummarizedExperiment_1.0.2.tar.gz</package>
+					<package>https://bioconductor.org/packages/3.2/bioc/src/contrib/GenomicAlignments_1.6.3.tar.gz</package>
+					<package>https://bioconductor.org/packages/3.2/bioc/src/contrib/rtracklayer_1.30.4.tar.gz</package>
+					<package>https://bioconductor.org/packages/3.2/bioc/src/contrib/MotifDb_1.12.1.tar.gz</package>
+					<package>https://cran.rstudio.com/src/contrib/grImport_0.9-0.tar.gz</package>
+					<package>https://cran.rstudio.com/src/contrib/lattice_0.20-33.tar.gz</package>
+					<package>https://bioconductor.org/packages/3.2/bioc/src/contrib/BSgenome_1.38.0.tar.gz</package>
+					<package>https://bioconductor.org/packages/3.2/bioc/src/contrib/seqLogo_1.36.0.tar.gz</package>
+					<package>https://bioconductor.org/packages/3.2/bioc/src/contrib/rGADEM_2.18.0.tar.gz</package>
+					<package>https://bioconductor.org/packages/3.2/bioc/src/contrib/MotIV_1.26.0.tar.gz</package>
+					<package>https://cran.rstudio.com/src/contrib/ade4_1.7-4.tar.gz</package>
+					<package>https://cran.rstudio.com/src/contrib/RColorBrewer_1.1-2.tar.gz</package>
+					<package>https://cran.rstudio.com/src/contrib/dichromat_2.0-0.tar.gz</package>
+					<package>https://cran.rstudio.com/src/contrib/Rcpp_0.12.4.tar.gz</package>
+					<package>https://cran.rstudio.com/src/contrib/plyr_1.8.3.tar.gz</package>
+					<package>https://cran.rstudio.com/src/contrib/colorspace_1.2-6.tar.gz</package>
+					<package>https://cran.rstudio.com/src/contrib/munsell_0.4.3.tar.gz</package>
+					<package>https://cran.rstudio.com/src/contrib/labeling_0.3.tar.gz</package>
+					<package>https://cran.rstudio.com/src/contrib/scales_0.4.0.tar.gz</package>
+					<package>https://bioconductor.org/packages/3.2/bioc/src/contrib/motifStack_1.14.0.tar.gz</package>
+					<package>https://cran.rstudio.com/src/contrib/DBI_0.3.1.tar.gz</package>
+					<package>https://cran.rstudio.com/src/contrib/RSQLite_1.0.0.tar.gz</package>
+					<package>https://bioconductor.org/packages/3.2/bioc/src/contrib/AnnotationDbi_1.32.3.tar.gz</package>
+					<package>https://bioconductor.org/packages/3.2/bioc/src/contrib/biomaRt_2.26.1.tar.gz</package>
+					<package>https://bioconductor.org/packages/3.2/bioc/src/contrib/GenomicFeatures_1.22.13.tar.gz</package>
+					<package>https://cran.rstudio.com/src/contrib/Matrix_1.2-5.tar.gz</package>
+					<package>https://cran.rstudio.com/src/contrib/survival_2.39-2.tar.gz</package>
+					<package>https://cran.rstudio.com/src/contrib/Formula_1.2-1.tar.gz</package>
+					<package>https://cran.rstudio.com/src/contrib/digest_0.6.9.tar.gz</package>
+					<package>https://cran.rstudio.com/src/contrib/gtable_0.2.0.tar.gz</package>
+					<package>https://cran.rstudio.com/src/contrib/MASS_7.3-45.tar.gz</package>
+					<package>https://cran.rstudio.com/src/contrib/stringi_1.0-1.tar.gz</package>
+					<package>https://cran.rstudio.com/src/contrib/magrittr_1.5.tar.gz</package>
+					<package>https://cran.rstudio.com/src/contrib/stringr_1.0.0.tar.gz</package>
+					<package>https://cran.rstudio.com/src/contrib/reshape2_1.4.1.tar.gz</package>
+					<package>https://cran.rstudio.com/src/contrib/ggplot2_2.1.0.tar.gz</package>
+					<package>https://cran.rstudio.com/src/contrib/latticeExtra_0.6-28.tar.gz</package>
+					<package>https://cran.rstudio.com/src/contrib/cluster_2.0.4.tar.gz</package>
+					<package>https://cran.rstudio.com/src/contrib/rpart_4.1-10.tar.gz</package>
+					<package>https://cran.rstudio.com/src/contrib/nnet_7.3-12.tar.gz</package>
+					<package>https://cran.rstudio.com/src/contrib/acepack_1.3-3.3.tar.gz</package>
+					<package>https://cran.rstudio.com/src/contrib/foreign_0.8-66.tar.gz</package>
+					<package>https://cran.rstudio.com/src/contrib/gridExtra_2.2.1.tar.gz</package>
+					<package>https://cran.rstudio.com/src/contrib/Hmisc_3.17-3.tar.gz</package>
+					<package>https://bioconductor.org/packages/3.2/bioc/src/contrib/VariantAnnotation_1.16.4.tar.gz</package>
+					<package>https://bioconductor.org/packages/3.2/bioc/src/contrib/biovizBase_1.18.0.tar.gz</package>
+					<package>https://cran.rstudio.com/src/contrib/matrixStats_0.50.1.tar.gz</package>
+					<package>https://bioconductor.org/packages/3.2/bioc/src/contrib/Gviz_1.14.7.tar.gz</package>
+					<package>https://cran.rstudio.com/src/contrib/TFMPvalue_0.0.6.tar.gz</package>
+					<package>https://bioconductor.org/packages/3.2/bioc/src/contrib/motifbreakR_1.0.8.tar.gz</package>
+				</action>
+			</actions>
+		</install>
+		<readme>
+		</readme>
+	</package>
+</tool_dependency>
